@@ -17,7 +17,7 @@ function addTaskFromInput() {
     }
 }
 
-function addTask(taskValue, isCompleted = false) {
+function addTask(taskValue, isCompleted = false, parentTaskId = null) {
     const ul = document.getElementById('task-list');
     const li = document.createElement('li');
 
@@ -43,6 +43,11 @@ function addTask(taskValue, isCompleted = false) {
     li.appendChild(editButton);
     li.appendChild(deleteButton);
 
+    // Setze eine zusätzliche Klasse für eingerückte Todos
+    if (parentTaskId) {
+        li.classList.add('indented');
+    }
+
     ul.appendChild(li);
 }
 
@@ -51,7 +56,11 @@ function saveTasks() {
     document.querySelectorAll('#task-list li').forEach(function (taskLi) {
         const text = taskLi.querySelector('span').textContent;
         const isCompleted = taskLi.querySelector('input').checked;
-        tasks.push({ text, isCompleted });
+
+        // Extrahiere die ID des übergeordneten Todos
+        const parentTaskId = taskLi.parentNode.closest('li')?.id;
+
+        tasks.push({ text, isCompleted, parentTaskId });
     });
     localStorage.setItem('tasks', JSON.stringify(tasks));
 }
@@ -59,7 +68,7 @@ function saveTasks() {
 function loadTasks() {
     const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     tasks.forEach(function (task) {
-        addTask(task.text, task.isCompleted);
+        addTask(task.text, task.isCompleted, task.parentTaskId);
     });
 }
 
