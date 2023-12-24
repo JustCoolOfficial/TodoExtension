@@ -1,47 +1,39 @@
-body{
+body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #000; /* Hintergrund schwarz */
+    color: #808080; /* Graue Textfarbe */
     width: 350px;
 }
 
-#container{
+#container {
     background-color: #fff;
-    padding: 15px;
-    border-radius: 10;
+    padding: 18px;
+    border-radius: 10px; /* Ecken rund */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#new-task{
+#new-task {
     padding: 10px;
     width: calc(100% - 20px);
     margin-bottom: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #beabab;
     border-radius: 4px;
     outline: none;
 }
 
-#add-task{
-    padding: 10px;
-    width: 100%;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-size: 13px;
-    transition: opacity 0.3s ease;
+#add-task {
+    display: none; /* "Add Task"-Button ausblenden */
 }
 
-#task-list{
+#task-list {
     margin-top: 20px;
     list-style: none;
     padding: 0;
 }
 
-#task-list li{
+#task-list li {
     display: flex;
     align-items: center;
     padding: 10px;
@@ -49,19 +41,21 @@ body{
     margin-bottom: 5px;
     border-radius: 4px;
     overflow: hidden;
+    border: 1px solid #d3a3a3;
+    border-radius: 4px;
 }
 
-#task-list li span{
+#task-list li span {
     flex-grow: 1;
     margin-left: 10px;
     word-break: break-all;
 }
 
-input[type='checkbox']{
+input[type='checkbox'] {
     cursor: pointer;
 }
 
-button:not(#add-task){
+button:not(#add-task) {
     margin-left: 5px;
     padding: 5px 8px;
     border: none;
@@ -70,6 +64,13 @@ button:not(#add-task){
     font-size: 12px;
 }
 
-button:hover{
+button:hover {
     opacity: 0.8;
+}
+
+#logo{
+    margin-bottom: 10px;
+    margin-left: 135px;
+    width: 50px; /* Breite des Logos */
+    height: 50px; /* Höhe des Logos */
 }

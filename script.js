@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('add-task').addEventListener('click', addTaskFromInput);
+    document.getElementById('new-task').addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+            addTaskFromInput();
+        }
+    });
     loadTasks();
 });
 
@@ -39,7 +44,6 @@ function addTask(taskValue, isCompleted = false) {
     li.appendChild(deleteButton);
 
     ul.appendChild(li);
-
 }
 
 function saveTasks() {
