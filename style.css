@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000; /* Hintergrund schwarz */
+    background-color: #ffffff; /* Hintergrund schwarz */
     color: #808080; /* Graue Textfarbe */
     width: 350px;
 }
@@ -12,6 +12,7 @@ body {
     padding: 18px;
     border-radius: 10px; /* Ecken rund */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: #000;
 }
 
 #new-task {
